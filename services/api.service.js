@@ -11,7 +11,12 @@ module.exports = {
 			path: "/api",
 			whitelist: [
 				"**"
-			]
+			],
+			
+			aliases: {
+				//create certification
+				"POST certificate/create": "certification.create"
+			}
 		}],
 	}
 };

@@ -32,7 +32,7 @@ module.exports = {
 
 	// Define transporter. 
 	// More info: https://moleculer.services/docs/0.13/networking.html
-	transporter: "NATS",
+	transporter: "",
 
 	// Define a serializer. 
 	// Available values: "JSON", "Avro", "ProtoBuf", "MsgPack", "Notepack", "Thrift". 
