@@ -1,3 +1,5 @@
+const Certificate = require('./certificateModel.js')
+
 module.exports = {
     name: "certificate",
 
@@ -24,8 +26,21 @@ module.exports = {
 				courseload: {type: 'number', min: 10, max: 100}
 			},
 
-			handler(ctx){
-				return ctx.params
+			async handler(ctx){
+				try {
+					const {name, born, course, courseload} = ctx.params
+					const result  = await Certificate.create({
+						name,
+						born,
+						course,
+						courseload
+					})
+					return result
+				} catch (error) {
+					console.log(error)
+					return 'Server Error'
+				}
+				
 			}
 		}
     },
