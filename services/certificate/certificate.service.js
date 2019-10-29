@@ -17,10 +17,17 @@ module.exports = {
 	 * Actions
 	 */
     actions: {
-        create(ctx) {
-            return ctx.params
-        },
+        create: {
+			params: {
+				name: {type: 'string', min: 2, max: 30},
+				born: {type: 'string', min: 2, max:11},
+				courseload: {type: 'number', min: 10, max: 100}
+			},
 
+			handler(ctx){
+				return ctx.params
+			}
+		}
     },
 
 	/**
