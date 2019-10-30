@@ -20,7 +20,9 @@ module.exports = {
 	 */
     actions: {
 		get(ctx){
-			return 'Ok'
+			const result = await Certificate.findOne({id_certificate: ctx.params.id})
+			
+			return result
 		},
         create: {
 			params: {
@@ -32,7 +34,7 @@ module.exports = {
 
 				var id = Math.floor(Math.random() * 5000)
 				var data = await Certificate.findOne({id_certificate: id})
-				
+
 				while (data) {
 					 id = Math.floor(Math.random() * 5000)
 					 data = await Certificate.findOne({id_certificate: id})	
