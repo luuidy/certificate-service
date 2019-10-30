@@ -19,17 +19,34 @@ module.exports = {
 	 * Actions
 	 */
     actions: {
+		get(ctx){
+			return 'Ok'
+		},
         create: {
 			params: {
 				name: {type: 'string', min: 2, max: 30},
 				born: {type: 'string', min: 2, max:11},
 				courseload: {type: 'number', min: 10, max: 100}
 			},
-
 			async handler(ctx){
+
+				var id = Math.floor(Math.random() * 5000)
+				var data = await Certificate.findOne({id_certificate: id})
+				
+				while (data) {
+					 id = Math.floor(Math.random() * 5000)
+					 data = await Certificate.findOne({id_certificate: id})	
+					 if(data == null){
+						 break
+					 }else{
+						 continue
+					 }
+				}
+
 				try {
 					const {name, born, course, courseload} = ctx.params
 					const result  = await Certificate.create({
+						id_certificate: id,
 						name,
 						born,
 						course,
@@ -42,7 +59,9 @@ module.exports = {
 				}
 				
 			}
-		}
+		},
+		
+	   
     },
 
 	/**

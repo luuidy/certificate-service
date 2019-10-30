@@ -15,7 +15,8 @@ module.exports = {
 			
 			aliases: {
 				//create certification
-				"POST certificate": "certification.create"
+				"POST certificate": "certificate.create",
+				"GET certificate/:id": "certificate.get"
 			}
 		}],
 	}
