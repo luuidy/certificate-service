@@ -1,0 +1,20 @@
+.get-certificate{
+    display: flex;
+    justify-content: center;
+}
+
+.get-certificate h1{
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+.get-certificate form{
+    border: 1px groove rgba(0, 0, 0, 0.11);
+    padding: 15px;
+    margin: 50px;
+    width: 50%;
+    min-width: 20%;
+}
+
+.get-certificate .btn{
+    width: 100%;
+}
