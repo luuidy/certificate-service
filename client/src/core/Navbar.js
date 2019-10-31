@@ -5,6 +5,7 @@ import './navbar.css'
 const Navbar = () => {
     return (
         <nav className="navbar" style={{display: 'flex', justifyContent:'center'}}>
+            <Link className="navbar-brand" to="/">Home</Link>
             <Link className="navbar-brand" to="/certificate">Get Certificate</Link>
         </nav>
     )
