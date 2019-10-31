@@ -1,5 +1,6 @@
 import React from 'react'
 import './certificate.css'
+import Certification from '../components/Certification'
 
 const Certificate = () => {
     return (
@@ -16,6 +17,7 @@ const Certificate = () => {
                 <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
+            <Certification/>
         </div>
     )
 }
