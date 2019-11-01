@@ -7,9 +7,9 @@ const Certificate = new connection.Schema({
         minlength: 2,
         maxlength: 30
     },
-    course: String,
-    courseload: String,
+    email: String,
     born: String,
+    course: String,
 })
 
 module.exports = connection.model('certificate', Certificate)

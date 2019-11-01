@@ -1,11 +1,12 @@
 import React from 'react'
+import bg from './background1.jpg'
 import './certification.css'
 
-const Certification = () => {
+const Certification = ({name, course, date}) => {
     return (
         <div className="a">
         <div className="b">
-        <img  width="841" height="595"/></div>
+        <img src={bg} width="841" height="595" alt=""/></div>
         <div id="c" className="cls_002"><span className="cls_002">C E R T I F I C A T E   O F   C O M P L E T I O N</span></div>
         <div id="d" className="cls_003"><span className="cls_003">T H I S    A W A R D    C E R T I F I E S     T H A T</span></div>
         <div id="e" className="cls_004"><span className="cls_004">name</span></div>

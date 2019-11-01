@@ -27,7 +27,6 @@ module.exports = {
 			params: {
 				name: {type: 'string', min: 2, max: 30},
 				born: {type: 'string', min: 2, max:11},
-				courseload: {type: 'number', min: 10, max: 100}
 			},
 			async handler(ctx){
 
@@ -45,13 +44,13 @@ module.exports = {
 				}
 
 				try {
-					const {name, born, course, courseload} = ctx.params
+					const {name, email, born, course} = ctx.params
 					const result  = await Certificate.create({
 						id_certificate: id,
 						name,
+						email,
 						born,
-						course,
-						courseload
+						course
 					})
 					return result
 				} catch (error) {
