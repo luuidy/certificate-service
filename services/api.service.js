@@ -12,6 +12,12 @@ module.exports = {
 			whitelist: [
 				"**"
 			],
+
+			cors: {
+                origin: "*",
+                methods: "*",
+                credentials: true
+            },
 			
 			aliases: {
 				//create certification

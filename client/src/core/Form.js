@@ -1,20 +1,26 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 import './Form.css'
+
+const instance = axios.create({
+    baseURL: 'http://localhost:3000/api'
+})
 
 const Form = () => {
     const [certificate, setCertificate] = useState({
         name: '',
         email: '',
         born: '',
-        course: ''
+        course: 'Web-Developer'
     })
     const {name, email, born, course} = certificate
 
     const handleChange = e => setCertificate({...certificate, [e.target.name]: e.target.value})
     
-    const submit = e => {
+    const submit = async e => {
         e.preventDefault()
-        console.log(certificate)
+        const result = await instance.post('/certificate/create', certificate)
+        console.log(result.data.id_certificate)
     }
     return (
         <div className="form">

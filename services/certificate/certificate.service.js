@@ -26,7 +26,6 @@ module.exports = {
         create: {
 			params: {
 				name: {type: 'string', min: 2, max: 30},
-				born: {type: 'string', min: 2, max:11},
 			},
 			async handler(ctx){
 
