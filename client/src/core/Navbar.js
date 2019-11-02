@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="navbar" style={{display: 'flex', justifyContent:'center'}}>
             <Link className="navbar-brand" to="/">Home</Link>
-            <Link className="navbar-brand" to="/certificate">Get Certificate</Link>
+            <Link className="navbar-brand" to="/certificate">Get Certificate by <strong>Code</strong></Link>
         </nav>
     )
 }
