@@ -22,12 +22,29 @@ const Form = () => {
     const submit = async e => {
         e.preventDefault()
         const result = await instance.post('/certificate/create', certificate)
+        setCertificate({
+            name: '',
+            email: '',
+            born: '',
+            course: 'Web-Developer'
+        })
         setCode(result.data.id_certificate)
     }
     return (
         <div className="form">
             <form onSubmit={submit}>
-                {code && <div className="alert alert-info" style={{textAlign: 'center'}}><h5>Your certificate code is: <strong>{code}</strong></h5></div>}
+                {code && 
+                <>
+                    <div 
+                    className="alert alert-info" 
+                    style={{textAlign: 'center'}}>
+                        <h5>
+                            Your certificate code is: <strong>{code}</strong>
+                        </h5>
+                    <small className="form-text text-muted"><strong>don't forget this code</strong></small>
+                    </div>
+                </>
+                }
                 <h1>Create Certificate</h1>
             <div className="form-group">
                     <label htmlFor="name-input">Name</label>

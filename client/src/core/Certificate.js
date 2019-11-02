@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 import './certificate.css'
 import Certification from '../components/Certification'
+
+const instance = axios.create({
+    baseURL: 'http://localhost:3000/api'
+})
 
 const Certificate = () => {
     const [certification, setCertification] = useState(null)
@@ -10,9 +15,11 @@ const Certificate = () => {
         setCode(e.target.value)
     }
 
-    const submit = e =>{
+    const submit = async e =>{
         e.preventDefault()
-        console.log(code)
+        const result = await instance.post('/certificate/get', {code: code})
+        setCode('')
+        console.log(result.data)
     }
     return (
         <div>

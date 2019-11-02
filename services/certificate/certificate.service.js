@@ -20,7 +20,7 @@ module.exports = {
 	 */
     actions: {
 		async get(ctx){
-			const result = await Certificate.findOne({id_certificate: ctx.params.id})
+			const result = await Certificate.findOne({id_certificate: ctx.params.code})
 			return result
 		},
         create: {
