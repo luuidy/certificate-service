@@ -19,7 +19,7 @@ const Certificate = () => {
         e.preventDefault()
         const result = await instance.post('/certificate/get', {code: code})
         setCode('')
-        console.log(result.data)
+        setCertification(result.data)
     }
     return (
         <div>
@@ -35,7 +35,11 @@ const Certificate = () => {
                 </form>
             </div>
             )}
-            {certification && <Certification/>}
+            {certification && <Certification 
+            name={certification.name}
+            course={certification.course}
+            born={certification.born} 
+            />}
         </div>
     )
 }
