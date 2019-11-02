@@ -13,6 +13,8 @@ const Form = () => {
         born: '',
         course: 'Web-Developer'
     })
+    const [code, setCode] = useState(null)
+
     const {name, email, born, course} = certificate
 
     const handleChange = e => setCertificate({...certificate, [e.target.name]: e.target.value})
@@ -20,11 +22,12 @@ const Form = () => {
     const submit = async e => {
         e.preventDefault()
         const result = await instance.post('/certificate/create', certificate)
-        console.log(result.data.id_certificate)
+        setCode(result.data.id_certificate)
     }
     return (
         <div className="form">
             <form onSubmit={submit}>
+                {code && <div className="alert alert-info" style={{textAlign: 'center'}}><h5>Your certificate code is: <strong>{code}</strong></h5></div>}
                 <h1>Create Certificate</h1>
             <div className="form-group">
                     <label htmlFor="name-input">Name</label>
